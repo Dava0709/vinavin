@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<section class="event_page">
+    <div class="container">
+        <h2 class="title">{{ category.name }}</h2>
+        <div class="event-list">
+            {% for events in event %}
+            <div class="event-card">
+                <h4 class="event_page">{{events.title}}</h4>
+                <h5 class="event-card__company">{{ events.price }}</h5>
+                <h5 class="event-card__company">{{ events.category }}</h5>
+                <a href="{% url 'event_detail_page' pk=events.pk %}" class="dark-button">Подробнее</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

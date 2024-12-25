@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    background-color: var(--Lightbrown);
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --Lightbrown: #BC9F8B;
+    --Cedar: #AB886D;
+    --Penny: #543310;
+    --Brown: #422808;
+    --Chocolate: #3D2104;
+    --Secondary: #D9D9D9;
+    --Dark: #000000;
+    --Beige: #AB886D;
+    --White: #FFFFFF;
+
+}
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--Dark);
+    margin-bottom: 30px;
+}
+
+.header {
+    padding: 15px 0;
+    background-color: var(--Chocolate);
+}
+.menu-button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid var(--White);
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#menu-list {
+    display: none;
+    position: relative;
+    display: block;
+    padding: 20px 0;
+    background-color: var(--Penny);
+    margin: 0 20px;
+    border-radius: 0 0 10px 10px;
+}
+.menu-list .menu-list__item {
+    list-style: none;
+}
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu-list__link {
+    text-decoration: none;
+    color: var(--White);
+}
+.menu-list__link img {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+
+
+main {
+    background-color: var(--Lightbrown);
+    min-height: 100vh;
+}
+.categories, .jobs, .job-detail, .auth {
+    padding: 30px 0;
+    text-align: left;
+    margin-bottom: -50px;
+}
+
+.categories-list, .jobs-list {
+    margin: 10px;
+}
+.category-item {
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--Dark);
+    background-color: var(--Beige);
+    border-radius: 30px;
+    padding: 12px 38px;
+    transition: 0.3s ease-in-out;
+}
+.category-item:hover {
+    background-color: var(--Brown);
+}
+.event-card {
+    background-color: var(--Brown);
+    color: var(--White);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.event-card__title, .job-card__company {
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: var(--Secondary)
+}
+.event-card__title {
+    font-weight: 700;
+}
+.event-card__company {
+    font-weight: 400;
+}
+.dark-button, .button-success {
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 0;
+    background-color: var(--Secondary);
+    color: var(--Dark);
+    padding: 9px 30px;
+    border-radius: 30px;
+    border: none;
+}
+.button-success {
+    background-color: var(--Chocolate);
+    color: var(--White);
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px 55px;
+    margin: 12px 0;
+    text-align: left;
+}
+.job-detail .title {
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+.job-detail__data {
+    color: var(--Dark);
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+.job-detail__data span {
+    font-weight: 400;
+}
+.job-detail__content {
+    font-size: 15px;
+    color: var(--Dark);
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.job-detail__skills {
+    padding: 20px;
+    text-align: left;
+    background-color: var(--Brown);
+    color: var(--White);
+    border-radius: 10px;
+}
+.job-detail__title {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.job-detail__skills p {
+    font-size: 14px;
+}
+.help {
+    font-size: 12px;
+    text-align: left;
+    color: var(--Dark);
+}
+.help-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--Dark);
+}
+
+.auth form {
+    margin: 20px 0;
+}
+.auth label {
+    display: block;
+    color: var(--Dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.auth help {
+    font-weight: 400;
+    font-size: 14px;
+}
+.auth input {
+    width: 90%;
+    padding: 9px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Chocolate);
+    color: var(--White);
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.helptext {
+    display: none;
+}
+.access {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120vh;
+    
+}
+.access .title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.access .dark-text {
+    color: var(--Dark);
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+.access-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}

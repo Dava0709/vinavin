@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Все события{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class="event_page">
+    <div class="container">
+        <h2 class="title">Все События</h2>
+        <div class="event-list">
+            {% for events in event %}
+            <div class="event-card">
+                <h4 class="event_page">{{events.title}}</h4>
+                <h5 class="event-card__company">{{ events.price }}</h5>
+                <h5 class="event-card__company">{{ events.category }}</h5>
+                <a href="{% url 'event_detail_page' pk=events.pk %}" class="dark-button">Подробнее</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <h1 class="title">Вы не зарегистрированы</h1>
+        <p class="dark-text">Чтобы увидеть содержимое страницы, необходимо пройти регистрицию или аутентификацию</p>
+        <div class="access-action">
+            <a href="{% url 'sign_up_page' %}" class="dark-button">Регистриция</a>
+            <a href="{% url 'login_page' %}" class="dark-button">Аутентификация</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

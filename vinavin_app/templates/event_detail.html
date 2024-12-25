@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ events.title }}{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class="job-detail">
+    <div class="container">
+        <h1 class="title"> {{ events.title }}</h1>
+        <h3 class="job-detail__data">Цена: {{ events.price }} </h3>
+        <h3 class="job-detail__data">Дата и время: <span>{{ events.date }}</span></h3>
+        <p class="job-detail__content">Адрес: <span>{{ events.address }}</span></p>
+        <p class="job-detail__content">Описание: <span>{{ events.description }}</span></p>
+        <div class="job-detail__skills">
+            <h3 class="job-detail__title">Требования к одежде:</h3>
+            <p>{{ events.dress_code }}</p>
+        </div>
+        <p class="job-detail__content"><strong>Дата публикации: </strong>{{ events.created_at|date:"d.m.Y" }}</p>
+    </div>
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <h1 class="title">Вы не зарегистрированы</h1>
+        <p class="dark-text">Чтобы увидеть содержимое страницы, необходимо пройти регистрицию или аутентификацию</p>
+        <div class="access-action">
+            <a href="{% url 'sign_up_page' %}" class="dark-button">Регистриция</a>
+            <a href="{% url 'login_page' %}" class="dark-button">Аутентификация</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

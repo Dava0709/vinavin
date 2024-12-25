@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Все Категории{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class="categories">
+    <div class="container">
+        <h2 class="title">Категории</h2>
+        <div class="categories-list">
+            <a href="{% url 'all_events_page' %}" class="category-item">Все</a>
+            {% for category in categories %}
+            <a href="{% url 'event_by_category_page' slug=category.slug %}" class="category-item">{{ category.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <h1 class="title">Вы не зарегистрированы</h1>
+        <p class="dark-text">Чтобы увидеть содержимое страницы, необходимо пройти регистрицию или аутентификацию</p>
+        <div class="access-action">
+            <a href="{% url 'sign_up_page' %}" class="dark-button">Регистриция</a>
+            <a href="{% url 'login_page' %}" class="dark-button">Аутентификация</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
